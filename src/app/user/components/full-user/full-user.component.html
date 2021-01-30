@@ -1,0 +1,6 @@
+<div *ngIf="user">
+  <hr>
+  <b>Address: </b><br>
+  {{user.address.city}} - {{user.address.street}} <br>
+  lat: {{user.address.geo.lat}} / lng: {{user.address.geo.lng}} <br>
+</div>

@@ -6,10 +6,11 @@ import { UsersComponent } from './components/users/users.component';
 import { UserComponent } from './components/user/user.component';
 import {UserService} from './services/user.service';
 import {HttpClientModule} from '@angular/common/http';
+import { FullUserComponent } from './components/full-user/full-user.component';
 
 
 @NgModule({
-  declarations: [UsersComponent, UserComponent],
+  declarations: [UsersComponent, UserComponent, FullUserComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
