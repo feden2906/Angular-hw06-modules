@@ -22,7 +22,7 @@ export class FullUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((value => this.userId = +value.id));
+    this.activatedRoute.params.subscribe(value => this.userId = +value.id);
     this.userService.getUserById(this.userId).subscribe(singleUser => this.user = singleUser);
   }
 

@@ -12,7 +12,8 @@ import {UserModule} from './user/user.module';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: 'users', loadChildren: () => import('./user/user.module').then(m => m.UserModule)}
+      {path: 'users', loadChildren: () => import('./user/user.module').then(m => m.UserModule)},
+      {path: 'posts', loadChildren: () => import('./post/post.module').then(m => m.PostModule)}
     ])
   ],
   providers: [],
