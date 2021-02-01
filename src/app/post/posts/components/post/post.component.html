@@ -1,4 +1,5 @@
 <div *ngIf="post.title.includes('dolorem')">
   {{post.id}} - {{post.title}}
-  <a [routerLink]="[post.id]">details</a>
+<!--  <a [routerLink]="[post.id]">details</a>-->
+  <button (click)="goTo()">details</button>
 </div>

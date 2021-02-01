@@ -14,6 +14,7 @@ export class FullPostComponent implements OnInit {
   postId: number;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private postService: PostService) {
+    // это способ через стейт навигейтом
     this.activatedRoute.params.subscribe(value => {
       this.post = this.router.getCurrentNavigation().extras.state as Post;
       // this.post = history.state;
@@ -23,8 +24,10 @@ export class FullPostComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(value => this.postId = +value.id);
-    this.postService.getPostById(this.postId).subscribe(singlePost => this.post = singlePost);
+    // это был бы способ через линку (роутерлинк)
+
+    // this.activatedRoute.params.subscribe(value => this.postId = +value.id);
+    // this.postService.getPostById(this.postId).subscribe(singlePost => this.post = singlePost);
   }
 
 }
