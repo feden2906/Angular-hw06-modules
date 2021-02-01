@@ -15,15 +15,19 @@ export class FullUserComponent implements OnInit {
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private userService: UserService) {
     this.activatedRoute.params.subscribe(value => {
-      this.user = this.router.getCurrentNavigation().extras.state as User;
-      // console.log(this.router.getCurrentNavigation());
-      // console.log(history.state);
+      this.userId = +value.id;
+      this.userService.getUserById(+value.id).subscribe(singleUser => this.user = singleUser);
     });
+    // this.activatedRoute.params.subscribe(value => {
+    //   this.user = this.router.getCurrentNavigation().extras.state as User;
+    //   // console.log(this.router.getCurrentNavigation());
+    //   // console.log(history.state);
+    // });
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(value => this.userId = +value.id);
-    this.userService.getUserById(this.userId).subscribe(singleUser => this.user = singleUser);
+
+
   }
 
 }

@@ -16,6 +16,7 @@ import {UserModule} from './user/user.module';
       {path: 'posts', loadChildren: () => import('./post/post.module').then(m => m.PostModule)}
     ])
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
