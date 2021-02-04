@@ -1,8 +1,9 @@
 <hr>
 <div *ngIf="post">
-  <h1>full post</h1>
+  <h1>full post
+    <button (click)="editPost()">edit post</button>
+  </h1>
   {{post.id}} - {{post.title}}
-  <button (click)="editPost()">edit post</button>
   <br>
   {{post.body}}
 <!--  <a routerLink="edit">edit post</a>-->
