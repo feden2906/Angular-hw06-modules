@@ -1,0 +1,13 @@
+<hr>
+<h1>edit post</h1>
+<form [formGroup]="postEditionForm" (ngSubmit)="saveForm(postEditionForm)">
+  <label>Change Post Title:
+    <input type="text" formControlName="title">
+  </label>
+  <br>
+  <label>Change Post Body:
+    <input type="text" formControlName="body">
+  </label>
+  <br>
+  <button>Submit</button>
+</form>

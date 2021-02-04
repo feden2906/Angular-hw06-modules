@@ -23,6 +23,10 @@ export class FullPostComponent implements OnInit {
     });
   }
 
+  editPost(): void {
+    this.router.navigate(['edit'], {relativeTo: this.activatedRoute, state: this.post});
+  }
+
   ngOnInit(): void {
     // это был бы способ через линку (роутерлинк)
 

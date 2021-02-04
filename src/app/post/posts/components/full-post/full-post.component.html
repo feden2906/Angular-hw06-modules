@@ -1,5 +1,11 @@
+<hr>
 <div *ngIf="post">
   <h1>full post</h1>
-  <hr>
-  {{post.id}} - {{post.body}}
+  {{post.id}} - {{post.title}}
+  <button (click)="editPost()">edit post</button>
+  <br>
+  {{post.body}}
+<!--  <a routerLink="edit">edit post</a>-->
+
 </div>
+<router-outlet></router-outlet>

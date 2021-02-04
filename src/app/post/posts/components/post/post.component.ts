@@ -15,7 +15,7 @@ export class PostComponent implements OnInit {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   goTo(): void {
-    this.router.navigate([this.post.id], {relativeTo: this.activatedRoute, state: this.post})
+    this.router.navigate([this.post.id], {relativeTo: this.activatedRoute, state: this.post});
   }
   ngOnInit(): void {
   }
