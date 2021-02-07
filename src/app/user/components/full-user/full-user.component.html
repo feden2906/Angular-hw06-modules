@@ -1,7 +1,24 @@
 <div *ngIf="user">
-  <h1>full user</h1>
   <hr>
-  <b>Address: </b><br>
-  {{user.address.city}} - {{user.address.street}} <br>
-  lat: {{user.address.geo.lat}} / lng: {{user.address.geo.lng}} <br>
+  <h1>full user
+    <button>
+      <a routerLink="edit">edit user</a>
+    </button>
+  </h1>
+  <hr>
+  <p>{{user.id}} - {{user.name}}</p>
+  <p>{{user.username}}</p>
+  <p>{{user.email}}</p>
+  <p>
+    <b>Address: </b><br>
+    {{user.address.city}} - {{user.address.street}} <br>
+    lat: {{user.address.geo.lat}} / lng: {{user.address.geo.lng}}
+  </p>
+  <p>{{user.phone}}</p>
+  <p>{{user.website}}</p>
+  <p>{{user.company.name}}<br>
+    {{user.company.catchPhrase}}<br>
+    {{user.company.bs}}
+  </p>
 </div>
+<router-outlet></router-outlet>

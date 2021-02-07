@@ -7,10 +7,11 @@ import { UserComponent } from './components/user/user.component';
 import {UserService} from './services/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FullUserComponent } from './components/full-user/full-user.component';
+import { UserEditionComponent } from './components/user-edition/user-edition.component';
 
 
 @NgModule({
-  declarations: [UsersComponent, UserComponent, FullUserComponent],
+  declarations: [UsersComponent, UserComponent, FullUserComponent, UserEditionComponent],
   imports: [
     CommonModule,
     UserRoutingModule,

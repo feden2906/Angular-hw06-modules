@@ -1,5 +1,5 @@
-<hr>
 <div *ngIf="post">
+  <hr>
   <h1>full post
     <button (click)="editPost()">edit post</button>
   </h1>
@@ -7,6 +7,5 @@
   <br>
   {{post.body}}
 <!--  <a routerLink="edit">edit post</a>-->
-
 </div>
 <router-outlet></router-outlet>
