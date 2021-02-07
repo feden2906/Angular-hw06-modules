@@ -31,6 +31,7 @@ export class PostEditionComponent implements OnInit {
   private initForm(): void {
     this.postEditionForm = this.formBuilder.group({
       id: new FormControl(this.post.id),
+      userId: new FormControl(this.post.userId),
       title: new FormControl(this.post.title),
       body: new FormControl(this.post.body)
     });
@@ -38,7 +39,7 @@ export class PostEditionComponent implements OnInit {
 
   saveForm(postEditionForm): void {
     this.subjectPostService.setNewPostContext(postEditionForm.value);
-    console.log(postEditionForm.value);
+    this.router.navigate(['posts', this.post.id]);
   }
 
 }
