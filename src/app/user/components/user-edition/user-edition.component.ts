@@ -15,11 +15,8 @@ export class UserEditionComponent implements OnInit, OnChanges {
   userId: number;
   userEditionForm: FormGroup;
 
-  constructor(private router: Router,
-              private activatedRoute: ActivatedRoute,
-              private userService: UserService,
-              private formsModule: FormsModule,
-              private formBuilder: FormBuilder) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute,
+              private userService: UserService, private formsModule: FormsModule, private formBuilder: FormBuilder) {
   }
 
 
@@ -39,6 +36,7 @@ export class UserEditionComponent implements OnInit, OnChanges {
   // });
 
   ngOnInit(): void {
+
   }
 
   private initForm(): void {
