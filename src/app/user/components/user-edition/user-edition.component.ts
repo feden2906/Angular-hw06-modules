@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {User} from '../../models/User';
 import {FormBuilder, FormControl, FormGroup, FormsModule} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -9,7 +9,7 @@ import {UserService} from '../../services/user.service';
   templateUrl: './user-edition.component.html',
   styleUrls: ['./user-edition.component.css']
 })
-export class UserEditionComponent implements OnInit {
+export class UserEditionComponent implements OnInit, OnChanges {
 
   user: User;
   userId: number;
@@ -20,22 +20,25 @@ export class UserEditionComponent implements OnInit {
               private userService: UserService,
               private formsModule: FormsModule,
               private formBuilder: FormBuilder) {
-
-    this.activatedRoute.params.subscribe(value => {
-      this.userId = +value.id;
-      console.log(value); // не видит его вообще??? - пустой объект
-      this.userService.getUserById(this.userId).subscribe(singleUser => this.user = singleUser);
-    });
-
-    // Также не работает второй способ:
-      // this.activatedRoute.params.subscribe(value => {
-      //   this.user = this.router.getCurrentNavigation().extras.state as User;
-      //   console.log(this.router.getCurrentNavigation());
-      // });
   }
 
-  ngOnInit(): void {
+
+  ngOnChanges(): void {
+    this.activatedRoute.params.subscribe(value => {
+      console.log(value);
+      this.userService.getUserById(this.userId).subscribe(singleUser => this.user = singleUser);
+    });
     this.initForm();
+  }
+
+
+  // Также не работает второй способ:
+  // this.activatedRoute.params.subscribe(value => {
+  //   this.user = this.router.getCurrentNavigation().extras.state as User;
+  //   console.log(this.router.getCurrentNavigation());
+  // });
+
+  ngOnInit(): void {
   }
 
   private initForm(): void {
