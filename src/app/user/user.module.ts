@@ -8,6 +8,7 @@ import {UserService} from './services/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FullUserComponent } from './components/full-user/full-user.component';
 import { UserEditionComponent } from './components/user-edition/user-edition.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { UserEditionComponent } from './components/user-edition/user-edition.com
   imports: [
     CommonModule,
     UserRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [HttpClientModule],
   providers: [UserService]

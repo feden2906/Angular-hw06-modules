@@ -1,1 +1,55 @@
-<p>user-edition works!</p>
+<div >
+  <hr>
+  <h1>edit user </h1>
+  <form [formGroup]="userEditionForm">
+    <label>Change User Name:
+      <input type="text" formControlName="name">
+    </label>
+    <br>
+    <label>Change User Username:
+      <input type="text" formControlName="username">
+    </label>
+    <br>
+    <label>Change User Email:
+      <input type="text" formControlName="email">
+    </label>
+    <br>
+    <label>Change User Address-City:
+      <input type="text" formControlName="city">
+    </label>
+    <br>
+    <label>Change User Address-Street:
+      <input type="text" formControlName="street">
+    </label>
+    <br>
+    <label>Change User Address-Geo/Lat:
+      <input type="number" formControlName="latitude">
+    </label>
+    <br>
+    <label>Change User Address-Geo/Lng:
+      <input type="number" formControlName="longitude">
+    </label>
+    <br>
+    <label>Change User Phone:
+      <input type="number" formControlName="phone">
+    </label>
+    <br>
+    <label>Change User Website:
+      <input type="text" formControlName="website">
+    </label>
+    <br>
+    <label>Change User Company-Name:
+      <input type="text" formControlName="companyName">
+    </label>
+    <br>
+    <label>Change User Company-CatchPhrase:
+      <input type="text" formControlName="catchPhrase">
+    </label>
+    <br>
+    <label>Change User Company-BS:
+      <input type="text" formControlName="bs">
+    </label>
+    <br>
+    <button>Submit</button>
+  </form>
+</div>

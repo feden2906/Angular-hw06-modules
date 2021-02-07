@@ -31,7 +31,6 @@ export class FullPostComponent implements OnInit {
   ngOnInit(): void {
     this.subjectService.getNewPostContext().subscribe(editedUser => editedUser ? this.post = editedUser : null);
     // это был бы способ через линку (роутерлинк)
-
     // this.activatedRoute.params.subscribe(value => this.postId = +value.id);
     // this.postService.getPostById(this.postId).subscribe(singlePost => this.post = singlePost);
   }
