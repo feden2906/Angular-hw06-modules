@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from '../../models/User';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from '../../services/user.service';
@@ -15,9 +15,12 @@ export class FullUserComponent implements OnInit {
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private userService: UserService) {
     this.activatedRoute.params.subscribe(value => {
-      this.userId = +value.id;
-      console.log(value);
-      this.userService.getUserById(this.userId).subscribe(singleUser => this.user = singleUser);
+      // this.userId = +value.id;
+      // console.log(value);
+      this.userService.getUserById(value.id).subscribe(singleUser => {
+        // console.log(singleUser);
+        this.user = singleUser;
+      });
     });
     // this.activatedRoute.params.subscribe(value => {
     //   this.user = this.router.getCurrentNavigation().extras.state as User;
@@ -29,4 +32,8 @@ export class FullUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  edit(): void {
+    this.router.navigate(['edit'], {relativeTo: this.activatedRoute, state: this.user});
+  }
 }

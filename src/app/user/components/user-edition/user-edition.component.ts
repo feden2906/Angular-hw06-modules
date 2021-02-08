@@ -9,7 +9,7 @@ import {UserService} from '../../services/user.service';
   templateUrl: './user-edition.component.html',
   styleUrls: ['./user-edition.component.css']
 })
-export class UserEditionComponent implements OnInit, OnChanges {
+export class UserEditionComponent implements OnInit {
 
   user: User;
   userId: number;
@@ -17,26 +17,15 @@ export class UserEditionComponent implements OnInit, OnChanges {
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
               private userService: UserService, private formsModule: FormsModule, private formBuilder: FormBuilder) {
-  }
-
-
-  ngOnChanges(): void {
     this.activatedRoute.params.subscribe(value => {
-      console.log(value);
-      this.userService.getUserById(this.userId).subscribe(singleUser => this.user = singleUser);
+      this.user = this.router.getCurrentNavigation().extras.state as User;
+      console.log(this.user);
     });
-    this.initForm();
   }
 
-
-  // Также не работает второй способ:
-  // this.activatedRoute.params.subscribe(value => {
-  //   this.user = this.router.getCurrentNavigation().extras.state as User;
-  //   console.log(this.router.getCurrentNavigation());
-  // });
 
   ngOnInit(): void {
-
+    this.initForm();
   }
 
   private initForm(): void {
@@ -50,6 +39,7 @@ export class UserEditionComponent implements OnInit, OnChanges {
       latitude: new FormControl(this.user.address.geo.lat),
       longitude: new FormControl(this.user.address.geo.lng),
       phone: new FormControl(this.user.phone),
+      website: new FormControl(this.user.website),
       companyName: new FormControl(this.user.company.name),
       catchPhrase: new FormControl(this.user.company.catchPhrase),
       bs: new FormControl(this.user.company.bs),
